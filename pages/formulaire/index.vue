@@ -8,7 +8,7 @@
 </template>
     
 <script>
-    import TextInput from '@/composants/TextInput.vue'
+    import TextInput from '@/components/TextInput.vue'
 
 export default {
   components: {

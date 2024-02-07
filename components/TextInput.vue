@@ -3,10 +3,10 @@
     <div>
         
         <form @submit.prevent="submitForm">
-        <label for="allergyInput">Entrer votre allergie :</label>
-        <input type="text" id="allergyInput" v-model="allergy" placeholder="Entrer votre Allergie" required>
+        <label for="name">Entrer votre allergie :</label>
+        <input type="text" id="name" v-model="allergy" placeholder="Entrer votre Allergie" required>
         
-        <fieldset>
+        <fieldset id="isPrivate">
             <legend>Visibilité de l'allergie :</legend>
             <label>
             <input type="radio" v-model="visibility" value="public"> Publique
@@ -22,7 +22,7 @@
 
 </template>
     
-<script>
+<script lang="ts">
 
 export default {
     data() {
@@ -32,11 +32,18 @@ export default {
         }
     },
     methods: {
-        submitForm() {
-        // console.log('Allergie soumise :', this.allergy);
-        // console.log('Visibilité de l\'allergie :', this.visibility);
-        this.allergy = '';
-        this.visibility = 'public';
+        async submitForm() {
+            const config = useRuntimeConfig()
+            await $fetch(`${config.public.API_BASE_URL}/formulaire`, {
+                method: 'POST', 
+                body: {
+                    "name": this.allergy,
+                    "isPrivate": this.visibility,
+                    "createdBy": "65c356059c5d44fd7862e83a"
+                }
+            })
+            this.allergy = '';
+            this.visibility = 'public';
         }
     }
 }
