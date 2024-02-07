@@ -4,8 +4,11 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    font-family: 'Rubik Glitch Pop', system-ui;
     color: rgb(3, 234, 3);
+}
+
+h1, h2, h3 {
+    font-family: 'Rubik Glitch Pop', system-ui;
 }
 
 body{
