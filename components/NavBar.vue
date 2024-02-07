@@ -1,5 +1,6 @@
 <template>
     <div class="navbar">
+  
         <div class="left" style="cursor: grab;">
             <NuxtLink to="/liste">
                 <p class="link">Liste Publique </p>

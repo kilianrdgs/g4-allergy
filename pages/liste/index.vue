@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<NavBar/>
+	<NavBar/>
 	<h1>Liste</h1>
 	<AllergyList :allergyList="list" />
 	<Footer/>
