@@ -1,10 +1,6 @@
 <template>
-    <div class="allergy">
-        <p>{{ allergy.name }}</p>
-        <p>{{ allergy.createdBy.name }}</p>
-    
-    </div>
-
+    <h4 v-if="allergy.createdBy !== undefined && allergy.createdBy !== null">{{ allergy.createdBy.name }}</h4>
+    <span>{{ allergy.name }}</span>
 </template>
 
 <script lang="ts">
