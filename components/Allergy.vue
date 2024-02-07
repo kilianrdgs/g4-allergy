@@ -1,5 +1,5 @@
 <template>
-    <h4>{{ allergy.createdBy.name }}</h4>
+    <h4 v-if="allergy.createdBy !== undefined && allergy.createdBy !== null">{{ allergy.createdBy.name }}</h4>
     <span>{{ allergy.name }}</span>
 </template>
 
