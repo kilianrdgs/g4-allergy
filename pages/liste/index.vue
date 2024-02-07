@@ -1,6 +1,10 @@
 <template>
+	<div>
+		<NavBar/>
 	<h1>Liste</h1>
 	<AllergyList :allergyList="list" />
+	<Footer/>
+	</div>
 </template>
 
 <script lang="ts">
