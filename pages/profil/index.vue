@@ -25,8 +25,13 @@ definePageMeta({
 		methods : {
 			async getList(){
 				const config = useRuntimeConfig()
-				this.personalList = await $fetch(`${config.public.API_BASE_URL}list/kilian`, {
-					method: 'GET'
+        const authToken = localStorage.getItem("Authorization")
+				this.personalList = await $fetch(`${config.public.API_BASE_URL}list/personal`, {
+					method: 'GET',
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+            "Content-Type": "application/json",
+          },
 				})
 				console.log(this.personalList)
 			}
