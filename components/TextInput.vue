@@ -36,6 +36,9 @@ export default {
             const config = useRuntimeConfig()
             await $fetch(`${config.public.API_BASE_URL}formulaire`, {
                 method: 'POST', 
+                headers: {
+                    Authorization: "Bearer jwt",
+                },
                 body: {
                     "name": this.allergy,
                     "isPrivate": this.visibility,
