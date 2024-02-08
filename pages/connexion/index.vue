@@ -47,8 +47,9 @@
       }
 
       const data = await response.json();
-
+      navigateTo("/")
       console.log(data);
+      localStorage.setItem("Authorization", data);
     } catch (error) {
       console.error('Erreur lors de la connexion:', error.message);
     }

@@ -2,16 +2,16 @@
     <div class="navbar">
 
         <div class="left" style="cursor: grab;">
-            <NuxtLink to="/liste">
+            <NuxtLink to="/">
                 <h3 class="link">Liste Publique </h3>
             </NuxtLink>
            
-            <NuxtLink to="/liste-perso">
+            <NuxtLink to="/profil">
                 <p class="link">Liste Privée </p>
             </NuxtLink>
         </div>
     <div class="right" style="cursor: grab;">
-        <p class="link">Me deconnecter</p>
+        <p class="link" @click="deconnect">Me deconnecter</p>
     </div>
        
     </div>
@@ -20,6 +20,12 @@
 <script lang="ts">
     export default {
         name: "Navbar",
+        methods : {
+            deconnect(){
+                localStorage.removeItem("Authorization")
+                window.location.reload()
+            }
+        }
     }
 </script>
 
