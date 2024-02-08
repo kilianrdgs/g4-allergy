@@ -47,10 +47,10 @@
       }
 
       const data = await response.json();
-
-      console.log(data);
+      navigateTo("/")
+      localStorage.setItem("Authorization", data);
     } catch (error) {
-      console.error('Erreur lors de la connexion:', error.message);
+      alert("mot de passe ou email incorrect")
     }
   },
 },
