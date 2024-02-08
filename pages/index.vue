@@ -10,7 +10,7 @@ definePageMeta({
     <div class="list">
       <h2>Liste</h2>
       <div class="list-cell">
-        <PublicAllergyList :allergyList="list" />
+        <PublicAllergyList :allergyList="list" :currentUser="currentUser" />
       </div>
     </div>
     <Footer />
@@ -18,29 +18,49 @@ definePageMeta({
 </template>
 
 <script lang="ts">
-import PublicAllergyList from "../../components/PublicAllergyList.vue";
-
-export default {
-  name: "liste",
-  components: { PublicAllergyList },
-  data() {
-    return {
-      list: [],
-    };
-  },
-  methods: {
-    async getList() {
-      const config = useRuntimeConfig();
-      this.list = await $fetch(`${config.public.API_BASE_URL}list`, {
-        method: "GET",
-      });
-      console.log(this.list);
-    },
-  },
-  async mounted() {
-    await this.getList();
-  },
-};
+	import PublicAllergyList from '../../components/PublicAllergyList.vue'
+	
+ 	export default {
+    	name: "liste",
+		components: { PublicAllergyList },
+		data() {
+			return {
+				list: [],
+        currentUser: Object
+			}
+		},
+		methods : {
+			async getList(){
+				const config = useRuntimeConfig()
+        const authToken = localStorage.getItem("Authorization")
+				this.list = await $fetch(`${config.public.API_BASE_URL}list`, {
+					method: 'GET',
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+            "Content-Type": "application/json",
+          },
+				})
+				console.log(this.list)
+			},
+      async getCurrentUser() {
+          const config = useRuntimeConfig()
+          const authToken = localStorage.getItem("Authorization")
+          this.currentUser = await $fetch(`${config.public.API_BASE_URL}user`, {
+            method:"GET",
+            headers: {
+              Authorization: `Bearer ${authToken}`,
+              "Content-Type": "application/json",
+            },
+        })
+        console.log(this.currentUser)
+      },
+		},
+		async mounted() {
+			await this.getList()
+      await this.getCurrentUser()
+		},
+ 	}
+ 	
 </script>
 
 <style scoped>
