@@ -1,12 +1,13 @@
 <template>
     <div class="navbar">
+  
         <div class="left" style="cursor: grab;">
             <NuxtLink to="/liste">
-                <p class="link">Liste Publique </p>
+                <h3 class="link">Liste Publique </h3>
             </NuxtLink>
            
             <NuxtLink to="/profil">
-                <p class="link">Liste Privée </p>
+                <h3 class="link">Liste Privée </h3>
             </NuxtLink>
         </div>
     <div class="right" style="cursor: grab;">

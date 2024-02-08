@@ -1,6 +1,12 @@
+<script setup lang="ts">
+definePageMeta({
+    middleware: ['auth'],
+})
+</script>
+
 <template>
 	<div>
-		<NavBar/>
+	<NavBar/>
 	<h1>Liste</h1>
 	<AllergyList :allergyList="list" />
 	<Footer/>
