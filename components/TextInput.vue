@@ -1,7 +1,7 @@
 <template>
 
     <div>
-        
+
         <form @submit.prevent="submitForm">
         <label for="name">Entrer votre allergie :</label>
         <input type="text" id="name" v-model="allergy" placeholder="Entrer votre Allergie" required>
