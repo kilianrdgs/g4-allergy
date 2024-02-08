@@ -47,6 +47,8 @@
         throw new Error("Erreur lors de l'inscription");
       }
 
+      navigateTo('/connexion')
+      
       const data = await response.json();
 
       console.log(data);
