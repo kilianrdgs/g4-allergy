@@ -6,7 +6,7 @@
                 <h3 class="link">Liste Publique </h3>
             </NuxtLink>
            
-            <NuxtLink to="/liste-perso">
+            <NuxtLink to="/profil">
                 <p class="link">Liste Privée </p>
             </NuxtLink>
         </div>

@@ -5,18 +5,39 @@ definePageMeta({
 </script>
 
 <template>
-  <div>
-    <NavBar />
-    <h1>Profil</h1>
-    <img src="/error.png" />
+    <NavBar/>
+    <h1>Liste perso</h1>
+    <PersonalAllergyList :allergyList="personalList" />
     <Footer />
-  </div>
 </template>
 
 <script lang="ts">
-export default {
-  name: "accueil",
-};
+	import PersonalAllergyList from '../../components/PersonalAllergyList.vue'
+	
+ 	export default {
+    	name: "liste-perso",
+		components: { PersonalAllergyList },
+		data() {
+			return {
+				personalList: []
+			}
+		}, 
+		methods : {
+			async getList(){
+				const config = useRuntimeConfig()
+				this.personalList = await $fetch(`${config.public.API_BASE_URL}list/kilian`, {
+					method: 'GET'
+				})
+				console.log(this.personalList)
+			}
+		},
+		async mounted() {
+			await this.getList()
+		},
+ 	}
+ 	
 </script>
 
-<style></style>
+<style scoped>
+
+</style>
