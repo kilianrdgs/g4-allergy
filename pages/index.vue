@@ -1,8 +1,13 @@
+<script setup lang="ts">
+definePageMeta({
+    middleware: ['auth'],
+})
+</script>
+
 <template>
-<h1>accueil</h1>
 </template>
 
-<script>
+<script lang="ts">
  export default {
     name: "accueil"
  }

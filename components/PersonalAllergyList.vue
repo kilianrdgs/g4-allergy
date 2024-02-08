@@ -1,14 +1,14 @@
 <template>
     <div v-for="allergy in allergyList">
-        <Allergy :allergy="allergy" />
+        <PersonalAllergy :allergy="allergy" />
     </div>
 </template>
 
 <script lang="ts">
-    import Allergy from '@/components/Allergy.vue'
+    import PersonalAllergy from './PersonalAllergy.vue'
     export default {
         name: "AllergyList",
-        components: { Allergy },
+        components: { PersonalAllergy },
         props: { 
             allergyList: Array
         }
