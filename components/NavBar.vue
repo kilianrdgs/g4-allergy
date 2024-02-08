@@ -3,7 +3,7 @@
 
         <div class="left" style="cursor: grab;">
             <NuxtLink to="/">
-                <h3 class="link">Liste Publique </h3>
+                <p class="link">Liste Publique </p>
             </NuxtLink>
            
             <NuxtLink to="/profil">
