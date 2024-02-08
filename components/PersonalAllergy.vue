@@ -1,10 +1,5 @@
 <template>
-    <div class="allergy">
-        <p>{{ allergy.name }}</p>
-        <p>{{ allergy.createdBy.name }}</p>
-    
-    </div>
-
+    <span>{{ allergy.name }}</span>
 </template>
 
 <script lang="ts">
