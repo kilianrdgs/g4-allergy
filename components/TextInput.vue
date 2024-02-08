@@ -34,7 +34,7 @@ export default {
     methods: {
         async submitForm() {
             const config = useRuntimeConfig()
-            await $fetch(`${config.public.API_BASE_URL}/formulaire`, {
+            await $fetch(`${config.public.API_BASE_URL}formulaire`, {
                 method: 'POST', 
                 body: {
                     "name": this.allergy,
