@@ -47,11 +47,14 @@
         throw new Error("Erreur lors de l'inscription");
       }
 
-      navigateTo('/connexion')
       
       const data = await response.json();
+      console.log(data)
+      alert(data.message)
+      if (data.status) {
+       return navigateTo('/connexion')
 
-      console.log(data);
+      }
     } catch (error) {
       console.error("Erreur lors de l'inscription", error.message);
     }
