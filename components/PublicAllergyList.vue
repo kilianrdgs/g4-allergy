@@ -1,21 +1,14 @@
 <template>
-    <div v-for="allergy in allergyList" class="list">
-        <div class="top">
-            <h2>Liste des allergies</h2>
-        <p>ajouter une allergie +</p>
-        </div>
-        <div class="bottom">
-            <Allergy :allergy="allergy" />
-        </div>
-      
+    <div v-for="allergy in allergyList">
+        <PublicAllergy :allergy="allergy" />
     </div>
 </template>
 
 <script lang="ts">
-    import Allergy from '@/components/Allergy.vue'
+    import PublicAllergy from './PublicAllergy.vue'
     export default {
         name: "AllergyList",
-        components: { Allergy },
+        components: { PublicAllergy },
         props: { 
             allergyList: Array
         }

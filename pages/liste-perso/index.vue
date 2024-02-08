@@ -1,14 +1,16 @@
 <template>
+    <NavBar/>
 	<h1>Liste perso</h1>
-	<AllergyList :allergyList="personalList" />
+	<PersonalAllergyList :allergyList="personalList" />
+    <Footer />
 </template>
 
 <script lang="ts">
-	import AllergyList from '../../components/AllergyList.vue'
+	import PersonalAllergyList from '../../components/PersonalAllergyList.vue'
 	
  	export default {
     	name: "liste-perso",
-		components: { AllergyList },
+		components: { PersonalAllergyList },
 		data() {
 			return {
 				personalList: []

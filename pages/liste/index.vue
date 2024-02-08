@@ -8,17 +8,17 @@ definePageMeta({
 	<div>
 	<NavBar/>
 	<h1>Liste</h1>
-	<AllergyList :allergyList="list" />
+	<PublicAllergyList :allergyList="list" />
 	<Footer/>
 	</div>
 </template>
 
 <script lang="ts">
-	import AllergyList from '../../components/AllergyList.vue'
+	import PublicAllergyList from '../../components/PublicAllergyList.vue'
 	
  	export default {
     	name: "liste",
-		components: { AllergyList },
+		components: { PublicAllergyList },
 		data() {
 			return {
 				list: []
