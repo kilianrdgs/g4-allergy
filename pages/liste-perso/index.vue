@@ -19,7 +19,7 @@
 		methods : {
 			async getList(){
 				const config = useRuntimeConfig()
-				this.personalList = await $fetch(`${config.public.API_BASE_URL}list/admin2`, {
+				this.personalList = await $fetch(`${config.public.API_BASE_URL}list/kilian`, {
 					method: 'GET'
 				})
 				console.log(this.personalList)
