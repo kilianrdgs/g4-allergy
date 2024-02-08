@@ -1,6 +1,6 @@
 <template>
     <div v-for="allergy in allergyList">
-        <PublicAllergy :allergy="allergy" />
+        <PublicAllergy :allergy="allergy" :currentUser="currentUser" />
     </div>
 </template>
 
@@ -10,7 +10,8 @@
         name: "AllergyList",
         components: { PublicAllergy },
         props: { 
-            allergyList: Array
+            allergyList: Array,
+            currentUser: Object
         }
     }
 </script>
