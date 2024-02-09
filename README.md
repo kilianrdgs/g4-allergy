@@ -20,7 +20,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+## front Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -37,23 +37,12 @@ yarn dev
 # bun
 bun run dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
 # bun
 bun run build
 ```
 
+## front .env exemple
+```bash
+BACKEND_URL =""
+```
 
