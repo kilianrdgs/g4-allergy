@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+#star project
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -20,7 +20,7 @@ yarn install
 bun install
 ```
 
-## Development Server
+## front Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -32,44 +32,16 @@ npm run dev
 pnpm run dev
 
 # yarn
-yarn dev
+yarn run dev
 
 # bun
-bun run dev
+bun start
 ```
 
-## Production
-
-Build the application for production:
-
+## back .env exemple
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+BACKEND_URL =
 ```
 
-Locally preview production build:
 
-```bash
-# npm
-npm run preview
 
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
