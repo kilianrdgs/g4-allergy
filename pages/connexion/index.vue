@@ -13,10 +13,7 @@
      <p>pas encore de compte ? <NuxtLink to="/inscription" style="color: blue; background-color: rgb(70, 199, 0); padding: 5px;">inscription</NuxtLink></p>
    </div>
   </div>
-   
- </template>
- 
-
+</template>
 
  <script>
  export default {
@@ -41,21 +38,20 @@
         }),
       });
 
-      if (!response.ok) {
-        throw new Error('Erreur lors de la connexion');
+        if (!response.ok) {
+          throw new Error('Erreur lors de la connexion');
+        }
+
+        const data = await response.json();
+        localStorage.setItem("Authorization", data.authToken); 
+        this.$router.push("/");
+      } catch (error) {
+        alert("Mot de passe ou email incorrect");
       }
-
-      const data = await response.json();
-      navigateTo("/")
-      localStorage.setItem("Authorization", data);
-    } catch (error) {
-      alert("mot de passe ou email incorrect")
-    }
+    },
   },
-},
-
- };
- </script>
+};
+</script>
  
 
  <style scoped>

@@ -37,14 +37,14 @@
         },
         body: JSON.stringify({
             name: this.name,
-          email: this.email,
-          password: this.password,
-        }),
-      });
+            email: this.email,
+            password: this.password,
+          }),
+        });
 
-      if (!response.ok) {
-        throw new Error("Erreur lors de l'inscription");
-      }
+        if (!response.ok) {
+          throw new Error("Erreur lors de l'inscription");
+        }
 
       
       const data = await response.json();
