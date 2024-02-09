@@ -11,7 +11,7 @@
             </NuxtLink>
         </div>
     <div class="right" style="cursor: grab;">
-        <p>Ajouter une allergie</p>
+      <NuxtLink to="/formulaire"><p class="link">Ajouter une allergie</p></NuxtLink>
         <p class="link" @click="deconnect">Me deconnecter</p>
     </div>
        

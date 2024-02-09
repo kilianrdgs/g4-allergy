@@ -33,7 +33,6 @@ definePageMeta({
             "Content-Type": "application/json",
           },
 				})
-				console.log(this.personalList)
 			}
 		},
 		async mounted() {

@@ -1,6 +1,6 @@
 <template>
     <div class="cell">
-        <p>{{ allergy.createdBy.name }}</p>
+        <p>{{ allergy.createdBy.name }} : </p>
     <p>{{ allergy.name }}</p>
     <button v-if="currentUser.isAdmin" @click="deleteAllergy(allergy._id)">Supprimer</button>
     </div>

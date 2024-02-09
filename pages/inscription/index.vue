@@ -30,8 +30,6 @@
    methods: {
   async inscription() {
     try {
-      console.log(this.email)
-      console.log(this.password)
       const response = await fetch('http://localhost:3001/user', {
         method: 'POST',
         headers: {
@@ -48,36 +46,21 @@
           throw new Error("Erreur lors de l'inscription");
         }
 
-        const data = await response.json();
-        console.log(data);
-        alert(data.message);
-        if (data.status) {
-          return navigateTo('/connexion');
-        }
-      } catch (error) {
-        console.error("Erreur lors de l'inscription:", error.message);
-      }
-    },
-    validateForm() {
       
-      if (!this.name || !this.email || !this.password) {
-        alert("Veuillez remplir tous les champs.");
-        return false;
+      const data = await response.json();
+      alert(data.message)
+      if (data.status) {
+       return navigateTo('/connexion')
       }
-
-      
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(this.email)) {
-        alert("Veuillez saisir une adresse email valide.");
-        return false;
-      }
-
-      return true; 
-    },
+    } catch (error) {
+      console.error("Erreur lors de l'inscription", error.message);
+    }
   },
-};
-</script>
+},
 
+ };
+ </script>
+ 
  <style scoped>
  .page{
    height: 100vh;

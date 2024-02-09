@@ -48,7 +48,6 @@ definePageMeta({
             "Content-Type": "application/json",
           },
 				})
-				console.log(this.list)
 			},
       async getCurrentUser() {
           const config = useRuntimeConfig()
@@ -60,7 +59,6 @@ definePageMeta({
               "Content-Type": "application/json",
             },
         })
-        console.log(this.currentUser)
       },
 		},
 		async mounted() {
