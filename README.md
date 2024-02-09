@@ -3,8 +3,8 @@
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
- 
- install dependencies:
+
+Make sure to install the dependencies:
 
 ```bash
 # npm
@@ -16,6 +16,9 @@ pnpm install
 # yarn
 yarn install
 
+# bun
+bun install
+```
 
 ## front Server
 
@@ -29,17 +32,16 @@ npm run dev
 pnpm run dev
 
 # yarn
-yarn dev
+yarn run dev
 
 # bun
-bun run dev
-```
-# bun
-bun run build
+bun start
 ```
 
-## front .env exemple
+## back .env exemple
 ```bash
-BACKEND_URL =""
+BACKEND_URL =
 ```
+
+
 
