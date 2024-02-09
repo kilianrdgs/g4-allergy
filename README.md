@@ -16,9 +16,6 @@ pnpm install
 # yarn
 yarn install
 
-# bun
-bun install
-```
 
 ## front Server
 
