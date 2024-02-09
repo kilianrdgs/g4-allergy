@@ -30,8 +30,6 @@
    methods: {
   async connexion() {
     try {
-      console.log(this.email)
-      console.log(this.password)
       const response = await fetch('http://localhost:3001/connexion', {
         method: 'POST',
         headers: {

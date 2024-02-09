@@ -35,18 +35,24 @@ export default {
         async submitForm() {
             const config = useRuntimeConfig()
             const authToken = localStorage.getItem("Authorization")
+          if(this.allergy !== '') {
             await $fetch(`${config.public.API_BASE_URL}formulaire`, {
-                method: 'POST', 
+                method: 'POST',
                 headers: {
-                    Authorization: `Bearer ${authToken}`,
+                  Authorization: `Bearer ${authToken}`,
                 },
                 body: {
-                    "name": this.allergy,
-                    "isPrivate": this.visibility,
+                  "name": this.allergy,
+                  "isPrivate": this.visibility,
                 }
-            })
-            this.allergy = '';
-            this.visibility = 'public';
+              })
+              .then((res) => {
+                this.allergy = '';
+                this.visibility = 'public';
+                alert(res.message)
+                navigateTo("/")
+              })
+          }
         }
     }
 }
