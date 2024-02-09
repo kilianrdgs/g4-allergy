@@ -48,6 +48,7 @@
       const data = await response.json();
       navigateTo("/")
       localStorage.setItem("Authorization", data);
+      console.log(data)
     } catch (error) {
       alert("mot de passe ou email incorrect")
     }
@@ -123,8 +124,6 @@
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
-  
-
 }
 
 
