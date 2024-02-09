@@ -1,3 +1,9 @@
+<script setup lang="ts">
+definePageMeta({
+  middleware: ["auth"],
+});
+</script>
+
 <template>
     <div class="page">
       <div class="fortnite"></div>
@@ -12,7 +18,7 @@
     </div>
 </template>
     
-<script>
+<script lang="ts">
     import TextInput from '@/components/TextInput.vue'
 
 export default {
