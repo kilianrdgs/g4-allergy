@@ -1,8 +1,7 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   security: {
     headers: {
-      crossOriginEmbedderPolicy: process.env.NODE_ENV === 'development' ? 'unsafe-none' : 'require-corp',
+      xFrameOptions: 'SAMEORIGIN', 
     },
   },
   devtools: { enabled: true },
@@ -38,4 +37,4 @@ export default defineNuxtConfig({
       { name: 'referrer', content: 'no-referrer' }, 
     ],
   },
-})
+});
