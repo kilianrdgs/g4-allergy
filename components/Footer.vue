@@ -17,9 +17,10 @@
 .footer{
     position: absolute;
     bottom: 0px;
-    height: 80px;
+    height: 100px;
     width: 100%;
     background-image: url('/shrek.png');
+    background-color: rgb(72, 255, 0);
     background-size: contain;
     background-position: bottom;
     background-repeat: repeat-x;

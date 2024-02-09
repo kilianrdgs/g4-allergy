@@ -1,6 +1,7 @@
 <template>
    <div class="page">
       <div class="formulaire">
+        <div class="fortnite"></div>
      <h2>Inscription</h2>
      <form @submit.prevent="inscription" style="display: flex; flex-direction: column; gap: 30px;">
        <div class="inputs">
@@ -77,6 +78,8 @@
  }
  .formulaire{
    margin: auto;
+   z-index: 100;
+   position: relative;
    background-image: url('/textures.webp');
    width: 300px;
    height: 300px;
@@ -112,5 +115,21 @@
    margin-bottom: 20px;
 
 }
+
+.fortnite{
+	position: absolute;
+  top: 0px;
+  left: 0px;
+	height: 150px;
+	width: 300px;
+  transform: translate(0%, -100%);
+	background-image: url("/fortnite.png");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+
+}
+
+
  </style>
  

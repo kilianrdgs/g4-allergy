@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <div class="formulaire">
+      <div class="fortnite"></div>
      <h2>Connexion</h2>
      <form @submit.prevent="connexion" style="display: flex; flex-direction: column; gap: 30px;">
        <div class="inputs">
@@ -64,6 +65,10 @@
    height: 100vh;
    width: 100vw;
    display: flex;
+   background-image: url('/shrek.png');
+    background-size: 120px 120px;
+    background-position: bottom;
+    background-repeat: repeat;
  }
 
  h2{
@@ -72,6 +77,7 @@
  }
  .formulaire{
    margin: auto;
+   position: relative;
    background-image: url('/textures.webp');
    width: 300px;
    height: 300px;
@@ -107,6 +113,23 @@
    margin-bottom: 20px;
 
 }
+
+.fortnite{
+	position: absolute;
+  top: 0px;
+  left: 0px;
+	height: 150px;
+	width: 300px;
+  transform: translate(0%, -100%);
+	background-image: url("/fortnite.png");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+  
+
+}
+
+
  </style>
  
  
