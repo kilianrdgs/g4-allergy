@@ -9,6 +9,7 @@ definePageMeta({
 	<div class="car">
 	</div>
     <NavBar />
+    <NuxtLink to="/formulaire">Ajouter une allergie</NuxtLink>
     <div class="list">
 		<div class="dog"></div>
       <h2>Liste</h2>
@@ -48,7 +49,6 @@ definePageMeta({
             "Content-Type": "application/json",
           },
 				})
-				console.log(this.list)
 			},
       async getCurrentUser() {
           const config = useRuntimeConfig()
@@ -60,7 +60,6 @@ definePageMeta({
               "Content-Type": "application/json",
             },
         })
-        console.log(this.currentUser)
       },
 		},
 		async mounted() {

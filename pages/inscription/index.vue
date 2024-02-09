@@ -30,8 +30,6 @@
    methods: {
   async inscription() {
     try {
-      console.log(this.email)
-      console.log(this.password)
       const response = await fetch('http://localhost:3001/user', {
         method: 'POST',
         headers: {
@@ -50,11 +48,9 @@
 
       
       const data = await response.json();
-      console.log(data)
       alert(data.message)
       if (data.status) {
        return navigateTo('/connexion')
-
       }
     } catch (error) {
       console.error("Erreur lors de l'inscription", error.message);
