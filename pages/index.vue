@@ -6,14 +6,22 @@ definePageMeta({
 
 <template>
   <div class="page">
+	<div class="car">
+	</div>
     <NavBar />
     <div class="list">
+		<div class="dog"></div>
       <h2>Liste</h2>
+	  <div class="top">
+		<p>utilisateur :</p>
+		<p>Allergies :</p>
+	  </div>
       <div class="list-cell">
         <PublicAllergyList :allergyList="list" :currentUser="currentUser" />
       </div>
     </div>
     <Footer />
+
   </div>
 </template>
 
@@ -64,6 +72,7 @@ definePageMeta({
 </script>
 
 <style scoped>
+
 .list {
   position: absolute;
   top: 50%;
@@ -84,6 +93,19 @@ definePageMeta({
 .list h2 {
   margin: 10px;
 }
+
+.top{
+	width: 450px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 20px;
+	padding: 5px;
+	background-color: black;
+	border: 3px solid white;
+	animation-name: slide;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
 .list-cell {
   background-color: rgb(255, 0, 255);
   display: flex;
@@ -92,6 +114,31 @@ definePageMeta({
   height: 100%;
   overflow-y: scroll;
   gap: 10px;
+}
+
+.car{
+	position: absolute;
+	bottom: 0%;
+	right: 0px;
+	height: 50vh;
+	width: 50vw;
+	background-image: url("/car.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.dog{
+	position: absolute;
+	top: 0px;
+	transform: translate(-60%, -75%);
+	left: 50%;
+	height: 350px;
+	width: 350px;
+	background-image: url("/dog.png");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 @keyframes slide {

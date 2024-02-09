@@ -11,6 +11,7 @@
             </NuxtLink>
         </div>
     <div class="right" style="cursor: grab;">
+        <p>Ajouter une allergie</p>
         <p class="link" @click="deconnect">Me deconnecter</p>
     </div>
        
@@ -53,6 +54,7 @@
 
 
 .right{
+    display: flex;
     margin-right: 20px;
     margin-top: auto;
     margin-bottom: auto;
