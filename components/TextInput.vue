@@ -34,15 +34,15 @@ export default {
     methods: {
         async submitForm() {
             const config = useRuntimeConfig()
+            const authToken = localStorage.getItem("Authorization")
             await $fetch(`${config.public.API_BASE_URL}formulaire`, {
                 method: 'POST', 
                 headers: {
-                    Authorization: "Bearer jwt",
+                    Authorization: `Bearer ${authToken}`,
                 },
                 body: {
                     "name": this.allergy,
                     "isPrivate": this.visibility,
-                    "createdBy": "65c356059c5d44fd7862e83a"
                 }
             })
             this.allergy = '';
