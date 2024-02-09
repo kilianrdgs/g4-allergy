@@ -50,7 +50,14 @@ export default {
       } catch (error) {
         alert("Mot de passe ou email incorrect");
       }
-    },
+
+      const data = await response.json();
+      navigateTo("/")
+      localStorage.setItem("Authorization", data);
+      console.log(data)
+    }, catch (error) {
+      alert("mot de passe ou email incorrect")
+    }
   },
 };
 </script>
