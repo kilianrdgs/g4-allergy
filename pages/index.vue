@@ -9,7 +9,6 @@ definePageMeta({
 	<div class="car">
 	</div>
     <NavBar />
-    <NuxtLink to="/formulaire">Ajouter une allergie</NuxtLink>
     <div class="list">
 		<div class="dog"></div>
       <h2>Liste</h2>
