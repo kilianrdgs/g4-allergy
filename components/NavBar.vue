@@ -58,6 +58,7 @@
     margin-right: 20px;
     margin-top: auto;
     margin-bottom: auto;
+    gap: 20px;
 }
 
 .link{

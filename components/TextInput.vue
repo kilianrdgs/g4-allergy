@@ -1,22 +1,17 @@
 <template>
 
-    <div>
-
-        <form @submit.prevent="submitForm">
-        <label for="name">Entrer votre allergie :</label>
+    <div class="form">
+        <form @submit.prevent="submitForm" class="gap">
         <input type="text" id="name" v-model="allergy" placeholder="Entrer votre Allergie" required>
         
-        <fieldset id="isPrivate">
-            <legend>Visibilité de l'allergie :</legend>
-            <label>
-            <input type="radio" v-model="visibility" value="public"> Publique
-            </label>
-            <label>
-            <input type="radio" v-model="visibility" value="private"> Privée
-            </label>
+        <fieldset id="isPrivate" class="inputs">
+            <p style="color: black;">Visibilité de l'allergie :</p>
+            <input type="radio" v-model="visibility" value="public"> <p style="color: black;">Publique</p>
+
+            <input type="radio" v-model="visibility" value="private"> <p style="color: black;&">Privée</p>
         </fieldset>
         
-        <button type="submit">Soumettre</button>
+        <button type="submit" class="btn">Soumettre</button>
         </form>
     </div>
 
@@ -60,5 +55,45 @@ export default {
 </script>
 
 <style scoped>
+.form{
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  height: 100%;
+}
 
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  
+}
+
+input{
+  height: 80px;
+  font-size: 40px;
+  padding-left: 10px;
+}
+
+.inputs{
+  display: flex;
+  width: 50%;
+}
+.inputs input{
+  margin: auto;
+  width: 20px;
+  height: 20px;
+}
+
+.btn{
+  height: 100px;
+  width: 100px;
+  margin: auto;
+  border-radius: 100%;
+  background-color: red;
+  color: white;
+  font-size: 20px;
+}
 </style>

@@ -1,66 +1,66 @@
 <template>
-   <div class="page">
-      <div class="formulaire">
-        <div class="fortnite"></div>
-     <h2>Inscription</h2>
-     <form @submit.prevent="inscription" style="display: flex; flex-direction: column; gap: 30px;">
-       <div class="inputs">
-         <input type="text" id="name" placeholder="nom"  v-model="name" required>
-         <input type="email" id="email" placeholder="adresse email"  v-model="email" required>
-         <input type="password" id="password" placeholder="mot de passe" v-model="password" required>
+  <div class="page">
+     <div class="formulaire">
+       <div class="fortnite"></div>
+    <h2>Inscription</h2>
+    <form @submit.prevent="inscription" style="display: flex; flex-direction: column; gap: 30px;">
+      <div class="inputs">
+        <input type="text" id="name" placeholder="nom"  v-model="name" required>
+        <input type="email" id="email" placeholder="adresse email"  v-model="email" required>
+        <input type="password" id="password" placeholder="mot de passe" v-model="password" required>
 
-       </div>
-       <button type="submit" class="btn">S'inscrire</button>
-     </form>
-     <p>déja un compte ? <NuxtLink to="/connexion" style="color: blue; background-color: rgb(70, 199, 0); padding: 5px;">connexion</NuxtLink></p>
-   </div>
-   </div>
-  
- </template>
+      </div>
+      <button type="submit" class="btn">S'inscrire</button>
+    </form>
+    <p>déja un compte ? <NuxtLink to="/connexion" style="color: blue; background-color: rgb(70, 199, 0); padding: 5px;">connexion</NuxtLink></p>
+  </div>
+  </div>
  
- <script>
- export default {
-   name: "Connexion",
-   data() {
-     return {
-       email: "",
-       password: "",
-     };
-   },
-   methods: {
-  async inscription() {
-    try {
-      const response = await fetch('http://localhost:3001/user', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            name: this.name,
-            email: this.email,
-            password: this.password,
-          }),
-        });
+</template>
 
-        if (!response.ok) {
-          throw new Error("Erreur lors de l'inscription");
-        }
-
-      
-      const data = await response.json();
-      alert(data.message)
-      if (data.status) {
-       return navigateTo('/connexion')
-      }
-    } catch (error) {
-      console.error("Erreur lors de l'inscription", error.message);
-    }
+<script>
+export default {
+  name: "Connexion",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
   },
+  methods: {
+ async inscription() {
+   try {
+     const response = await fetch('http://localhost:3001/user', {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json',
+       },
+       body: JSON.stringify({
+           name: this.name,
+           email: this.email,
+           password: this.password,
+         }),
+       });
+
+       if (!response.ok) {
+         throw new Error("Erreur lors de l'inscription");
+       }
+
+     
+     const data = await response.json();
+     alert(data.message)
+     if (data.status) {
+      return navigateTo('/connexion')
+     }
+   } catch (error) {
+     console.error("Erreur lors de l'inscription", error.message);
+   }
+ },
 },
 
- };
- </script>
- 
+};
+</script>
+
  <style scoped>
  .page{
    height: 100vh;
