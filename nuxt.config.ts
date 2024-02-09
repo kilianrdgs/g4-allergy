@@ -1,5 +1,9 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  security: {
+    headers: {
+      xFrameOptions: 'SAMEORIGIN', 
+    },
+  },
   devtools: { enabled: true },
   css: [
     '~/assets/global.css',
@@ -33,4 +37,4 @@ export default defineNuxtConfig({
       { name: 'referrer', content: 'no-referrer' }, 
     ],
   },
-})
+});
